@@ -13,8 +13,6 @@ import java.util.ArrayList;
  */
 public class Formulario extends javax.swing.JFrame {
 
-    static ArrayList<Materia> materias;
-    
     public Formulario() {
         initComponents();
     }
@@ -293,7 +291,8 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel3.setText("Profesor:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "sin seleccionar", "Carlos", "Juan", "David", "Roberto", "Santiago" }));
+        jComboBox1.setEditable(true);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "sin seleccionar" }));
         jComboBox1.setToolTipText("Seleccionar Profesor");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,10 +413,9 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        Profesor profesor = new Profesor(jTextField1.getText(), jTextField2.getText());
-        jComboBox1.addItem(profesor.getNombre() + " " + profesor.getApellido());
+        Profesor profesor = new Profesor(jTextField3.getText(), jTextField6.getText());
         Profesor.profesores.add(profesor);
-
+        jComboBox1.addItem(profesor.nombreCompleto());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -432,14 +430,11 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        for (Profesor profesor : Profesor.profesores) {
-            if ((String) jComboBox1.getSelectedItem() == profesor.nombreCompleto()) {
-                
-                Materia materia = new Materia(jTextField7.getText(), profesor);
-                materias.add(materia);          
-                
+        if (jComboBox1.getSelectedIndex() != 0){
 
-            }
+            Materia materia = new Materia(jTextField7.getText(), Profesor.profesores.get(jComboBox1.getSelectedIndex() - 1));
+            Materia.materias.add(materia);
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -449,7 +444,6 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
-        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -486,9 +480,27 @@ public class Formulario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Formulario().setVisible(true);
+                Profesor carlos = new Profesor("Carlos", "Duarte");
+                Profesor juan = new Profesor("Juan", "Pérez");
+                Profesor david = new Profesor("David", "Lopez");
+                Profesor roberto = new Profesor("Roberto", "Díaz");
+                Profesor santiago = new Profesor("Santiago", "Galindo");
+                Profesor.profesores.add(carlos);
+                Profesor.profesores.add(juan);
+                Profesor.profesores.add(david);
+                Profesor.profesores.add(roberto);
+                Profesor.profesores.add(santiago);
+                Formulario formulario = new Formulario();
+                formulario.listaProfesores();
+                formulario.setVisible(true);
             }
         });
+    }
+
+    public void listaProfesores() {
+        for (Profesor profesor : Profesor.profesores) {
+            jComboBox1.addItem(profesor.nombreCompleto());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
