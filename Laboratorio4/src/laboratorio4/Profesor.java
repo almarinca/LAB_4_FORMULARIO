@@ -16,14 +16,14 @@ public class Profesor {
     private String nombre;
     private String Apellido;
     
-    public static ArrayList<Profesor> profesores; 
+    public static ArrayList<Profesor> profesores = new ArrayList<>(); 
 
     public Profesor(String nombre, String Apellido) {
         this.nombre = nombre;
         this.Apellido = Apellido;
         
     }
-
+    
     
     public String nombreCompleto() {
         return  nombre + " " + Apellido;

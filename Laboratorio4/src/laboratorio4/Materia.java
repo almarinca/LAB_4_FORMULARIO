@@ -5,6 +5,8 @@
  */
 package laboratorio4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Estudiante
@@ -12,6 +14,7 @@ package laboratorio4;
 public class Materia {
     String nombre;
     Profesor profesor;
+    public static ArrayList<Materia> materias = new ArrayList<>();
 
     public Materia(String nombre, Profesor profesor) {
         this.nombre = nombre;

@@ -463,14 +463,10 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
+            <Property name="editable" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="1">
                 <StringItem index="0" value="sin seleccionar"/>
-                <StringItem index="1" value="Carlos"/>
-                <StringItem index="2" value="Juan"/>
-                <StringItem index="3" value="David"/>
-                <StringItem index="4" value="Roberto"/>
-                <StringItem index="5" value="Santiago"/>
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Seleccionar Profesor"/>
