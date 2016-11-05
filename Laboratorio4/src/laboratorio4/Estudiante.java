@@ -16,6 +16,7 @@ public class Estudiante {
     String nombre;
     String Apellido;
     ArrayList<String> Materia;
+    public static ArrayList<Estudiante> estudiantes = new ArrayList<>();
 
     public Estudiante(String nombre, String Apellido, ArrayList<String> Materia) {
         this.nombre = nombre;
