@@ -420,11 +420,8 @@ public class Formulario extends javax.swing.JFrame {
             }
 
             nombre = verificarNombre(nombre);
-            if (nombre == null) {
-                break;
-            }
             apellido = verificarApellido(apellido);
-            if (apellido == null) {
+            if (nombre == null || apellido == null) {
                 break;
             }
 
@@ -444,14 +441,10 @@ public class Formulario extends javax.swing.JFrame {
             String apellido = jTextField6.getText();
 
             nombre = verificarNombre(nombre);
-            if (nombre == null) {
-                break;
-            }
             apellido = verificarApellido(apellido);
-            if (apellido == null) {
+            if (nombre == null || apellido == null) {
                 break;
             }
-
             Profesor profesor = new Profesor(nombre, apellido);
             Profesor.profesores.add(profesor);
             jComboBox1.addItem(profesor.nombreCompleto());
