@@ -424,22 +424,24 @@ public class Formulario extends javax.swing.JFrame {
                 if (nombre.contains(a)) {
                     JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
                     break loop;
-                } else if (nombre.length() < 3 || nombre.length() > 15) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
-                    break loop;
                 }
             }
+            if (nombre.length() < 3 || nombre.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
+                break loop;
+            }
+
             for (int i = 0; i < 10; i++) {
                 String a = String.valueOf(i);
                 if (apellido.contains(a)) {
                     JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
                     break loop;
-                } else if (apellido.length() < 3 || apellido.length() > 15) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
-                    break loop;
                 }
             }
-
+            if (apellido.length() < 3 || apellido.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
+                break loop;
+            }
             Estudiante e = new Estudiante(nombre, apellido, materias);
             Estudiante.estudiantes.add(e);
             jTextField1.setText("");
@@ -459,21 +461,25 @@ public class Formulario extends javax.swing.JFrame {
                 if (nombre.contains(a)) {
                     JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
                     break loop;
-                } else if (nombre.length() < 3 || nombre.length() > 15) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
-                    break loop;
                 }
             }
+            if (nombre.length() < 3 || nombre.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
+                break loop;
+            }
+
             for (int i = 0; i < 10; i++) {
                 String a = String.valueOf(i);
                 if (apellido.contains(a)) {
                     JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
                     break loop;
-                } else if (apellido.length() < 3 || apellido.length() > 15) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
-                    break loop;
                 }
             }
+            if (apellido.length() < 3 || apellido.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
+                break loop;
+            }
+
             Profesor profesor = new Profesor(nombre, apellido);
             Profesor.profesores.add(profesor);
             jComboBox1.addItem(profesor.nombreCompleto());
@@ -533,7 +539,7 @@ public class Formulario extends javax.swing.JFrame {
         for (Profesor profesor : Profesor.profesores) {
             profesores = profesores.concat(profesor.toString() + "\n");
         }
-        JOptionPane.showMessageDialog(this, profesores,"Profesores disponibles",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, profesores, "Profesores disponibles", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -541,7 +547,7 @@ public class Formulario extends javax.swing.JFrame {
         for (Estudiante estudiante : Estudiante.estudiantes) {
             estudiantes = estudiantes.concat(estudiante.toString() + "\n");
         }
-        JOptionPane.showMessageDialog(this, estudiantes,"Estudiantes disponibles",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, estudiantes, "Estudiantes disponibles", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -549,7 +555,7 @@ public class Formulario extends javax.swing.JFrame {
         for (Materia materia : Materia.materias) {
             materias = materias.concat(materia.toString() + "\n");
         }
-        JOptionPane.showMessageDialog(this, materias,"Materias disponibles",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, materias, "Materias disponibles", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
