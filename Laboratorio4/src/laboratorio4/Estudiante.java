@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio4;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Estudiante
- */
 public class Estudiante {
 
     String nombre;
@@ -24,7 +15,13 @@ public class Estudiante {
         this.Materia = Materia;
     }
 
-        public String getNombre() {
+    @Override
+    public String toString() {
+        return "Estudiante: " + nombre + " " + Apellido + "\n"
+                + "Materias: " + Materia + "\n";
+    }
+
+    public String getNombre() {
         return nombre;
     }
 
@@ -47,7 +44,5 @@ public class Estudiante {
     public void setMateria(ArrayList<String> Materia) {
         this.Materia = Materia;
     }
-
-   
 
 }
