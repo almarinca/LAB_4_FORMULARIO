@@ -416,32 +416,18 @@ public class Formulario extends javax.swing.JFrame {
 
             if (materias.size() < 3) {
                 JOptionPane.showMessageDialog(this, "debe inscribir un minimo de 3 materias");
-                break loop;
+                break;
             }
 
-            for (int i = 0; i < 10; i++) {
-                String a = String.valueOf(i);
-                if (nombre.contains(a)) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
-                    break loop;
-                }
+            nombre = verificarNombre(nombre);
+            if (nombre == null) {
+                break;
             }
-            if (nombre.length() < 3 || nombre.length() > 15) {
-                JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
-                break loop;
+            apellido = verificarApellido(apellido);
+            if (apellido == null) {
+                break;
             }
 
-            for (int i = 0; i < 10; i++) {
-                String a = String.valueOf(i);
-                if (apellido.contains(a)) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
-                    break loop;
-                }
-            }
-            if (apellido.length() < 3 || apellido.length() > 15) {
-                JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
-                break loop;
-            }
             Estudiante e = new Estudiante(nombre, apellido, materias);
             Estudiante.estudiantes.add(e);
             jTextField1.setText("");
@@ -456,28 +442,14 @@ public class Formulario extends javax.swing.JFrame {
         while (true) {
             String nombre = jTextField3.getText();
             String apellido = jTextField6.getText();
-            for (int i = 0; i < 10; i++) {
-                String a = String.valueOf(i);
-                if (nombre.contains(a)) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
-                    break loop;
-                }
-            }
-            if (nombre.length() < 3 || nombre.length() > 15) {
-                JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
-                break loop;
-            }
 
-            for (int i = 0; i < 10; i++) {
-                String a = String.valueOf(i);
-                if (apellido.contains(a)) {
-                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
-                    break loop;
-                }
+            nombre = verificarNombre(nombre);
+            if (nombre == null) {
+                break;
             }
-            if (apellido.length() < 3 || apellido.length() > 15) {
-                JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
-                break loop;
+            apellido = verificarApellido(apellido);
+            if (apellido == null) {
+                break;
             }
 
             Profesor profesor = new Profesor(nombre, apellido);
@@ -637,6 +609,44 @@ public class Formulario extends javax.swing.JFrame {
         for (Profesor profesor : Profesor.profesores) {
             jComboBox1.addItem(profesor.nombreCompleto());
         }
+    }
+
+    public String verificarNombre(String nombre) {
+        try {
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (nombre != null && nombre.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
+                    nombre = null;
+                }
+            }
+            if (nombre != null && nombre.length() < 3 || nombre.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
+                nombre = null;
+            }
+        } catch (Exception e) {
+            nombre = null;
+        }
+        return nombre;
+    }
+
+    public String verificarApellido(String apellido) {
+        try {
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (apellido != null && apellido.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
+                    apellido = null;
+                }
+            }
+            if (apellido != null && apellido.length() < 3 || apellido.length() > 15) {
+                JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
+                apellido = null;
+            }
+        } catch (Exception e) {
+            apellido = null;
+        }
+        return apellido;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
