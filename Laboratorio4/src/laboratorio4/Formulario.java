@@ -6,6 +6,7 @@
 package laboratorio4;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,10 +44,9 @@ public class Formulario extends javax.swing.JFrame {
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
-        label5 = new java.awt.Label();
-        label6 = new java.awt.Label();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -118,7 +118,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                         .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,48 +179,49 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Mostrar Datos"));
 
-        label5.setName(""); // NOI18N
-        label5.setText("Nombre:");
-
-        label6.setText("Apellido:");
-
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(200, 162, 220));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setText("ver profesores");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
 
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(200, 162, 220));
+        jButton6.setText("ver estudiantes");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("ver materias");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(122, 122, 122)
+                .addComponent(jButton5)
+                .addGap(134, 134, 134)
+                .addComponent(jButton6)
+                .addGap(129, 129, 129)
+                .addComponent(jButton7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
+                .addGap(22, 22, 22))
         );
 
         jButton4.setText("Cerrar");
@@ -299,7 +300,6 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel3.setText("Profesor:");
 
-        jComboBox1.setEditable(true);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "sin seleccionar" }));
         jComboBox1.setToolTipText("Seleccionar Profesor");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -354,7 +354,7 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,55 +376,112 @@ public class Formulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ArrayList<String> materias = new ArrayList<>();
-        jTextField4.setText(jTextField1.getText());
-        jTextField5.setText(jTextField2.getText());
+        loop:
+        while (true) {
+            String nombre = jTextField1.getText();
+            String apellido = jTextField2.getText();
+            ArrayList<String> materias = new ArrayList<>();
 
-        if (jCheckBox1.isSelected()) {
-            materias.add("Matemáticas");
+            if (jCheckBox1.isSelected()) {
+                materias.add("Matemáticas");
+            }
+
+            if (jCheckBox2.isSelected()) {
+                materias.add("Filosofía");
+            }
+
+            if (jCheckBox3.isSelected()) {
+                materias.add("Ciencias Naturales");
+            }
+
+            if (jCheckBox4.isSelected()) {
+                materias.add("Ciencias Sociales");
+            }
+
+            if (jCheckBox5.isSelected()) {
+                materias.add("Educación Física");
+            }
+
+            if (jCheckBox6.isSelected()) {
+                materias.add("Inglés");
+            }
+
+            if (jCheckBox7.isSelected()) {
+                materias.add("Física");
+            }
+
+            if (jCheckBox8.isSelected()) {
+                materias.add("Química");
+            }
+
+            if (materias.size() < 3) {
+                JOptionPane.showMessageDialog(this, "debe inscribir un minimo de 3 materias");
+                break loop;
+            }
+
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (nombre.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
+                    break loop;
+                } else if (nombre.length() < 3 || nombre.length() > 15) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
+                    break loop;
+                }
+            }
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (apellido.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
+                    break loop;
+                } else if (apellido.length() < 3 || apellido.length() > 15) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
+                    break loop;
+                }
+            }
+
+            Estudiante e = new Estudiante(nombre, apellido, materias);
+            Estudiante.estudiantes.add(e);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            JOptionPane.showMessageDialog(this, "Estudiante registrado correctamente");
+            break;
         }
-
-        if (jCheckBox2.isSelected()) {
-            materias.add("Filosofía");
-        }
-
-        if (jCheckBox3.isSelected()) {
-            materias.add("Ciencias Naturales");
-        }
-
-        if (jCheckBox4.isSelected()) {
-            materias.add("Ciencias Sociales");
-        }
-
-        if (jCheckBox5.isSelected()) {
-            materias.add("Educación Física");
-        }
-
-        if (jCheckBox6.isSelected()) {
-            materias.add("Inglés");
-        }
-
-        if (jCheckBox7.isSelected()) {
-            materias.add("Física");
-        }
-
-        if (jCheckBox8.isSelected()) {
-            materias.add("Química");
-        }
-
-        Estudiante e = new Estudiante(jTextField1.getText(), jTextField2.getText(), materias);
-        Estudiante.estudiantes.add(e);
-        jTextField1.setText("");
-        jTextField2.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        Profesor profesor = new Profesor(jTextField3.getText(), jTextField6.getText());
-        Profesor.profesores.add(profesor);
-        jComboBox1.addItem(profesor.nombreCompleto());
-        jTextField3.setText("");
-        jTextField6.setText("");
+        loop:
+        while (true) {
+            String nombre = jTextField3.getText();
+            String apellido = jTextField6.getText();
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (nombre.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, el nombre no debe contener numeros");
+                    break loop;
+                } else if (nombre.length() < 3 || nombre.length() > 15) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, nombre no debe tener menos de 3 o más de 15 caracteres");
+                    break loop;
+                }
+            }
+            for (int i = 0; i < 10; i++) {
+                String a = String.valueOf(i);
+                if (apellido.contains(a)) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe contener numeros");
+                    break loop;
+                } else if (apellido.length() < 3 || apellido.length() > 15) {
+                    JOptionPane.showMessageDialog(this, "registrado incorrectamente, apellido no debe tener menos de 3 o más de 15 caracteres");
+                    break loop;
+                }
+            }
+            Profesor profesor = new Profesor(nombre, apellido);
+            Profesor.profesores.add(profesor);
+            jComboBox1.addItem(profesor.nombreCompleto());
+            jTextField3.setText("");
+            jTextField6.setText("");
+            JOptionPane.showMessageDialog(this, "Profesor registrado correctamente");
+            break;
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -433,17 +490,26 @@ public class Formulario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        while (true) {
+            String nombreMateria = jTextField7.getText();
+            if (nombreMateria.length() < 3 || nombreMateria.length() > 30) {
+                JOptionPane.showMessageDialog(this, "ingrese correctamente el nombre de la materia, debe tener entre 3 y 30 caracteres");
+                break;
+            }
 
-        if (jComboBox1.getSelectedIndex() != 0) {
-            Materia materia = new Materia(jTextField7.getText(), Profesor.profesores.get(jComboBox1.getSelectedIndex() - 1));
-            Materia.materias.add(materia);
+            if (jComboBox1.getSelectedIndex() != 0) {
+                Materia materia = new Materia(nombreMateria, Profesor.profesores.get(jComboBox1.getSelectedIndex() - 1));
+                Materia.materias.add(materia);
+                jTextField7.setText("");
+                JOptionPane.showMessageDialog(this, "Materia registrada correctamente");
+                break;
+            } else {
+                JOptionPane.showMessageDialog(this, "debe seleccionar un profesor");
+                break;
+            }
+
         }
-        jTextField7.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -462,6 +528,30 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String profesores = "";
+        for (Profesor profesor : Profesor.profesores) {
+            profesores = profesores.concat(profesor.toString() + "\n");
+        }
+        JOptionPane.showMessageDialog(this, profesores,"Profesores disponibles",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String estudiantes = "";
+        for (Estudiante estudiante : Estudiante.estudiantes) {
+            estudiantes = estudiantes.concat(estudiante.toString() + "\n");
+        }
+        JOptionPane.showMessageDialog(this, estudiantes,"Estudiantes disponibles",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        String materias = "";
+        for (Materia materia : Materia.materias) {
+            materias = materias.concat(materia.toString() + "\n");
+        }
+        JOptionPane.showMessageDialog(this, materias,"Materias disponibles",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -476,16 +566,24 @@ public class Formulario extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -511,14 +609,14 @@ public class Formulario extends javax.swing.JFrame {
         Profesor.profesores.add(david);
         Profesor.profesores.add(roberto);
         Profesor.profesores.add(santiago);
-        Materia matematicas = new Materia("Matemáticas", null);
-        Materia filosofia = new Materia("Filosofía", null);
-        Materia cienciasNaturales = new Materia("Ciencias Naturales", null);
-        Materia cienciasSociales = new Materia("Ciencias Sociales", null);
-        Materia educacionFisica = new Materia("Educación Física", null);
-        Materia ingles = new Materia("Inglés", null);
-        Materia fisica = new Materia("Física", null);
-        Materia quimica = new Materia("Química", null);
+        Materia matematicas = new Materia("Matemáticas", carlos);
+        Materia filosofia = new Materia("Filosofía", juan);
+        Materia cienciasNaturales = new Materia("Ciencias Naturales", david);
+        Materia cienciasSociales = new Materia("Ciencias Sociales", roberto);
+        Materia educacionFisica = new Materia("Educación Física", santiago);
+        Materia ingles = new Materia("Inglés", roberto);
+        Materia fisica = new Materia("Física", carlos);
+        Materia quimica = new Materia("Química", david);
         Materia.materias.add(matematicas);
         Materia.materias.add(filosofia);
         Materia.materias.add(cienciasNaturales);
@@ -540,6 +638,9 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -560,15 +661,11 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
-    private java.awt.Label label5;
-    private java.awt.Label label6;
     // End of variables declaration//GEN-END:variables
 }

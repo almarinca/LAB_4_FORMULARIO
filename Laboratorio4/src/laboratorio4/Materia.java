@@ -20,6 +20,14 @@ public class Materia {
         this.nombre = nombre;
         this.profesor = profesor;
     }
+
+    @Override
+    public String toString() {
+        return  "nombre: " + nombre  + "\n"
+                + "profesor: " + profesor + "\n";
+    }
+    
+    
     
     
     

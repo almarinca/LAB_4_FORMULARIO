@@ -12,24 +12,26 @@ import java.util.ArrayList;
  * @author Estudiante
  */
 public class Profesor {
-    
+
     private String nombre;
     private String Apellido;
-    
-    public static ArrayList<Profesor> profesores = new ArrayList<>(); 
+
+    public static ArrayList<Profesor> profesores = new ArrayList<>();
 
     public Profesor(String nombre, String Apellido) {
         this.nombre = nombre;
         this.Apellido = Apellido;
-        
+
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return nombre + " " + Apellido + "\n";
+    }
+
     public String nombreCompleto() {
-        return  nombre + " " + Apellido;
+        return nombre + " " + Apellido;
     }
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -46,7 +48,5 @@ public class Profesor {
     public void setApellido(String Apellido) {
         this.Apellido = Apellido;
     }
-    
-    
-    
+
 }
